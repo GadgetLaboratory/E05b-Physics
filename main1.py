@@ -14,7 +14,7 @@ MARGIN = 10
 NUM_BALLS = 20
 SCREEN_TITLE = "Gravity Exercise"
 
-GRAVITY = 0 #update this value
+GRAVITY = 1 #update this value
 
 
 class Ball():
@@ -65,7 +65,7 @@ class Window(arcade.Window):
     def update(self, delta_time):
         for b in self.ball_list:
             # apply gravity here
-            b.update()
+            b.update(self.y - GRAVITY)
 
     def on_draw(self):
         arcade.start_render()
